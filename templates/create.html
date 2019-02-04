@@ -1,0 +1,18 @@
+{% extends "/base.html" %}
+{% block content %}
+
+<form method="POST">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input name="username" type="username" 
+    			 class="form-control" id="username" 
+    			 placeholder="Enter username"
+    			 {% if user %}
+    			 value="{{ user.username }}"
+    			 {% endif %}>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <a href="{{ url_for('list_usrs')}}" class="btn btn-danger">Back</a>
+</form>
+
+{% endblock %}
